@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo reload full page</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <form id="myform" action="getpicture" method="post">
+            <select id="myselect" name="myselect">
+                <option style="display:none" selected="selected" value="">Select</option>
+                <option value="1">all</option>
+                <option value="2">animal</option>
+                <option value="3">things</option>
+            </select>
+        </form>
+        <ul id="shows">
+        </ul>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script>
+            $("#myselect").change( function (){
+                $.ajax({
+                    type : "post",
+                    url    : "getpicture",
+                    data   : $("#myform").serialize(),
+                    dataType : "json",
+                    success : function(result){
+                        $("#shows").empty();
+                        for(var pic in result){
+                            var tmp = `<li><img src="${result[pic]}"></li>`;
+                            $("#shows").append(tmp);
+                        }
+                    } 
+                });
+            });
+        </script>
+    </body>
+    <meta
+</html>

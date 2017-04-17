@@ -1,0 +1,14 @@
+{
+  "name": "client_server",
+  "version": "1.0.0",
+  "description": "Demo different ways to render web pages",
+  "main": "index.js",
+  "author": "Techmaster team",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nunjucks": "^3.0.0",
+    "recursive-readdir": "^2.1.1"
+  }
+}
